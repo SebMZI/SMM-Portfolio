@@ -1,0 +1,126 @@
+#hero {
+    padding: 93px 0 184px 0;
+}
+
+.hero {
+    &-title {
+        width: 900px;
+        color: $header;
+        font-size: 132px;
+        font-weight: 700;
+        line-height: 130px;
+        margin-bottom: 40px;
+    }
+    &-subtitle {
+        width: 783px;
+        color: $text;
+        font-size: 26px;
+        text-align: justify;
+    }
+    &-illustrations {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 100px;
+        .bars {
+            position: relative;
+            .bar:nth-child(1) {
+                width: 2px;
+                height: 115px;
+                background: #bbb;
+            }
+            .bar:nth-child(2) {
+                top: 0;
+                position: absolute;
+                width: 2px;
+                height: 40px;
+                background: $header;
+                animation: bar 8s infinite ease;
+            }
+
+            @keyframes bar {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(75px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+        }
+        .rounded-scroll {
+            position: relative;
+
+            .mouse {
+                position: absolute;
+                right: 80px;
+                top: 70px;
+            }
+
+            .rotate {
+                animation: circle-rotate 7s infinite linear;
+            }
+            @keyframes circle-rotate {
+                to {
+                    transform: rotate(1turn);
+                }
+            }
+        }
+    }
+}
+
+#about {
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 225px;
+    margin-bottom: 135px;
+}
+
+.about-content {
+    .title {
+        font-size: 36px;
+        color: $header;
+    }
+    .delimitation {
+        margin: 20px 0;
+        width: 50px;
+        height: 2px;
+        background: $header;
+    }
+    .text {
+        text-align: justify;
+        color: $text;
+        font-size: 18px;
+    }
+}
+.about-pic {
+    height: 100%;
+    object-fit: cover;
+}
+
+#realizations {
+}
+
+.realizations-header {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    .title {
+        font-size: 40px;
+        color: $header;
+    }
+    .line {
+        height: 2px;
+        width: 100%;
+        background: $header;
+    }
+}

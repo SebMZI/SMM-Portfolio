@@ -1,0 +1,58 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 90px 0 134px;
+    &-form {
+        width: 325px;
+        height: 390px;
+        background: $header;
+        padding: 30px 50px;
+        .login-title {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .input-container {
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 25px;
+            label {
+                font-size: 14px;
+            }
+            input {
+                margin-top: 5px;
+                font-size: 16px;
+                height: 28px;
+                background: none;
+                border: none;
+                border-bottom: 1px solid #fff;
+                color: #fff;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .error {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 12px;
+            margin: 0;
+            color: $accent;
+            font-size: 12px;
+        }
+
+        .signin-btn {
+            margin-top: 12px;
+            height: 40px;
+            width: 100%;
+            color: #fff;
+            border: none;
+            background: $accent;
+        }
+    }
+}

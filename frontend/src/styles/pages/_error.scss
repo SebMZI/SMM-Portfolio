@@ -1,0 +1,36 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 118px 0;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+    .line {
+        height: 3px;
+        width: 198px;
+        background: $accent;
+    }
+    .title {
+        font-size: 250px;
+        color: $header;
+    }
+}
+
+.subtitle {
+    font-size: 120px;
+    color: $text;
+}
+
+.btn {
+    margin-top: 50px;
+    color: #fff;
+    background: $accent;
+    border: none;
+    padding: 13px 59px;
+}

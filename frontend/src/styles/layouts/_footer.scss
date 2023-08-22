@@ -1,0 +1,49 @@
+.footer {
+    background-color: $header;
+    height: 450px;
+    padding: 70px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-talk {
+        color: #fff;
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+        button {
+            padding: 26px 51px;
+            font-size: 18px;
+            font-weight: 700;
+            color: $header;
+            cursor: pointer;
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #fff;
+    }
+    &-text {
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        p {
+            margin-top: 40px;
+        }
+    }
+
+    &-icons {
+        display: flex;
+        align-items: flex-end;
+        gap: 15px;
+        cursor: pointer;
+        .icon {
+            font-size: 20px;
+        }
+    }
+}
