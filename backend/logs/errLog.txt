@@ -1,0 +1,9 @@
+20230825	18:28:15	d9b848bd-e5eb-4bba-8494-9bf591f0e58d	TypeError: Cannot read properties of undefined (reading 'startWith')
+20230825	18:28:32	997f1e81-389b-48cb-ab06-ff0c6ff86ac7	TypeError: authHeader.startWith is not a function
+20230825	18:28:36	c104f407-491d-4722-bf0e-40c497c3e71b	TypeError: authHeader.startWith is not a function
+20230825	18:29:34	0c727c93-22c6-430c-87de-3a22b71e52c8	ReferenceError: token is not defined
+20230825	18:29:49	edff02b4-a4d0-489f-aedd-39683c3e15fa	TypeError: Cannot read properties of undefined (reading 'username')
+20230825	18:33:47	81356a88-83d7-41f5-bb04-d437d6155cfc	TypeError: Cannot read properties of undefined (reading 'username')
+20230825	18:36:01	37b1456b-34df-41b3-8d1b-a3f03d10caa0	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20230825	18:47:13	8f812c93-384d-4dc5-8b28-907d7a93a0a2	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20230825	18:48:18	bf456190-c442-4980-8a47-56c0f74a4086	TypeError: Cannot read properties of undefined (reading 'UserInfo')

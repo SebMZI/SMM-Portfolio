@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
-import { HashLink, NavHashLink } from "react-router-hash-link";
+import { NavHashLink } from "react-router-hash-link";
 
 const Header = () => {
   return (

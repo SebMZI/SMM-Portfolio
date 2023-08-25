@@ -3,10 +3,18 @@ import circle from "../assets/circle.svg";
 import mouse from "../assets/mouse.svg";
 import aboutPic from "../assets/about-pic.jpg";
 import Post from "../components/Post";
+import { motion } from "framer-motion";
+import variants from "../utils/variants";
 
 const Home = () => {
   return (
-    <main>
+    <motion.main
+      variants={variants}
+      initial="out"
+      animate="in"
+      exit="out"
+      className=""
+    >
       <section id="hero">
         <div>
           <h1 className="hero-title">FRONTEND DEVELOPER</h1>
@@ -58,7 +66,7 @@ const Home = () => {
         <Post />
         <Post />
       </section>
-    </main>
+    </motion.main>
   );
 };
 

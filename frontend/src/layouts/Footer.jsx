@@ -1,8 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
+import variants from "../utils/variants";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <motion.footer
+      className="footer"
+      variants={variants}
+      initial="out"
+      animate="in"
+      exit="out"
+    >
       <div className="footer-talk">
         <h2>Want to have me in your team ?</h2>
         <button>Let's get started</button>
@@ -17,7 +25,7 @@ const Footer = () => {
           <i className="fa-brands fa-square-github icon"></i>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

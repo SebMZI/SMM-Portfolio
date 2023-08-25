@@ -1,8 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
+import variants from "../utils/variants";
 
 const Contact = () => {
   return (
-    <main className="contact">
+    <motion.main
+      variants={variants}
+      initial="out"
+      animate="in"
+      exit="out"
+      className="contact"
+    >
       <div className="header">
         <div className="contact-title">
           <h1>REACH ME</h1>
@@ -43,7 +51,7 @@ const Contact = () => {
           </button>
         </form>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

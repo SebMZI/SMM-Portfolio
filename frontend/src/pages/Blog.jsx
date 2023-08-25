@@ -1,9 +1,17 @@
 import React from "react";
 import imgTest from "../assets/post-text.jpg";
+import { motion } from "framer-motion";
+import variants from "../utils/variants";
 
 const Blog = () => {
   return (
-    <main className="blog">
+    <motion.main
+      className="blog"
+      variants={variants}
+      initial="out"
+      animate="in"
+      exit="out"
+    >
       <img src={imgTest} alt="test" className="blog-img" />
       <div className="blog-author">
         <img src={imgTest} alt="user" />
@@ -42,7 +50,7 @@ const Blog = () => {
         </div>
         <button className="btn-light">See code</button>
       </div>
-    </main>
+    </motion.main>
   );
 };
 
