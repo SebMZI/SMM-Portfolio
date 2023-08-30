@@ -1,0 +1,110 @@
+.modal,
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 4;
+}
+
+.overlay {
+    background: rgba(44, 44, 44, 0.2);
+}
+
+.modal-content {
+    z-index: 5;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #ffffff;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 700px;
+    min-width: 496px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h2 {
+        font-weight: normal;
+        font-size: 20px;
+        text-align: center;
+    }
+    .edit-form {
+        padding: 20px 45px;
+        display: flex;
+        flex-direction: column;
+
+        input,
+        textarea {
+            font-family: "Inter", sans-serif;
+            height: 20px;
+            border: none;
+            border-bottom: 1px solid $header;
+            margin: 9px 0px 20px 0px;
+            &:focus {
+                outline: none;
+                border-bottom: 1px solid $accent;
+            }
+        }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+        .modal-btns {
+            margin-top: 40px;
+        }
+    }
+}
+
+.send {
+    position: relative;
+    min-height: 100px;
+    text-align: center;
+}
+
+.edit {
+    top: 50%;
+}
+
+.modal-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+.delete,
+.modify {
+    width: 186px;
+    padding: 17px 66px;
+    border: 1px solid $header;
+    cursor: pointer;
+    background: none;
+}
+
+.cancel {
+    background: $accent;
+    width: 186px;
+    padding: 17px 66px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.close {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    background: none;
+    color: $accent;
+    padding: 0px;
+    font-size: 16px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}

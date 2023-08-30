@@ -1,0 +1,119 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 120px 0;
+}
+
+.editDeleteProject {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h2 {
+        font-size: 32px;
+    }
+
+    .project {
+        position: relative;
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+
+        &-img {
+            width: 245px;
+            height: 119px;
+            object-fit: cover;
+        }
+        &-content {
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        &-icons {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            .fa-trash-can {
+                color: red;
+            }
+        }
+    }
+}
+
+.addProject {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h2 {
+        font-size: 32px;
+    }
+    .add-form {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        .inputContainer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            input,
+            textarea {
+                height: 40px;
+                padding-left: 10px;
+                border: 1px solid $text;
+                font-size: 14px;
+                &:focus {
+                    outline: none;
+                    border: 2px solid $accent;
+                }
+            }
+            input::placeholder {
+                font-size: 12px;
+                opacity: 0.7;
+            }
+            textarea {
+                height: 160px;
+                resize: none;
+                font-family: Inter;
+                font-size: 14px;
+                padding-top: 10px;
+
+                &:focus {
+                    overflow-y: scroll;
+                }
+            }
+            label {
+                position: absolute;
+                top: -15px;
+                left: 30px;
+                background: #fff;
+                padding: 5px 30px 0px 30px;
+            }
+        }
+        .errorHandler {
+            height: 12px;
+            color: $accent;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 45px;
+            background: $accent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}

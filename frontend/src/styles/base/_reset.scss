@@ -15,6 +15,7 @@ body {
 }
 
 .app {
+    font-family: "Inter", sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -49,4 +50,3 @@ a {
 //     background: $header;
 //     transform-origin: top;
 // }
-

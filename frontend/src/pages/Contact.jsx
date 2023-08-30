@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import variants from "../utils/variants";
+import { useSendEmailMutation } from "../features/projects/projectsApiSlice";
+import SendConfirmedModal from "../components/Modal/sendConfirmed";
 
 const Contact = () => {
+  const [sendEmail, { isLoading }] = useSendEmailMutation();
+  const [name, setName] = useState("");
+  const [emailValue, setEmailValue] = useState("");
+  const [object, setObject] = useState("");
+  const [message, setMessage] = useState("");
+  const [sendModal, setSendModal] = useState(false);
+  const [err, setErr] = useState("");
+  const [pending, setPending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!emailValue || !name || !object || !message) {
+      console.log("Please fill every field");
+      setErr("Please fill every field!");
+      setTimeout(() => {
+        setErr("");
+      }, 3000);
+      return;
+    }
+    try {
+      setPending(true);
+      const result = await sendEmail({
+        name: name,
+        email: emailValue,
+        object: object,
+        message: message,
+      }).then(() => {
+        e.target.reset();
+        setPending(false);
+        setSendModal(true);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <motion.main
       variants={variants}
@@ -21,6 +59,7 @@ const Contact = () => {
         </p>
       </div>
       <section className="contact-form-container">
+        {sendModal ? <SendConfirmedModal setSendModal={setSendModal} /> : null}
         <a href="mailto:mrgy.sebastien@gmail.com" className="btn">
           Contact by mail
         </a>
@@ -29,25 +68,47 @@ const Contact = () => {
           <p>OR</p>
           <div className="light-line"></div>
         </div>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
           <div className="input-container">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" autoFocus />
+            <input
+              type="text"
+              id="name"
+              autoFocus
+              autoComplete="off"
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" />
+            <input
+              autoComplete="off"
+              type="email"
+              id="email"
+              onChange={(e) => setEmailValue(e.target.value)}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="object">Object</label>
-            <input type="text" id="object" />
+            <input
+              autoComplete="off"
+              type="text"
+              id="object"
+              onChange={(e) => setObject(e.target.value)}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="message">Message</label>
-            <textarea name="message" id="message"></textarea>
+            <textarea
+              autoComplete="off"
+              name="message"
+              id="message"
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
           </div>
+          <div className="submit-error">{err}</div>
           <button type="submit" className="submit-btn">
-            Send
+            {!pending ? "Send" : "Sending..."}
           </button>
         </form>
       </section>

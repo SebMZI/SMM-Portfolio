@@ -1,56 +1,82 @@
-import React from "react";
-import imgTest from "../assets/post-text.jpg";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import variants from "../utils/variants";
+import { useParams } from "react-router";
+import { useProjectQuery } from "../features/projects/projectsApiSlice";
 
 const Blog = () => {
-  return (
-    <motion.main
-      className="blog"
-      variants={variants}
-      initial="out"
-      animate="in"
-      exit="out"
-    >
-      <img src={imgTest} alt="test" className="blog-img" />
-      <div className="blog-author">
-        <img src={imgTest} alt="user" />
-        <p>John Doe</p>
-      </div>
-      <div className="blog-content">
-        <h1 className="blog-title">Lorem Ipsum</h1>
-        <p className="blog-text">
-          Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos. Praesent auctor purus luctus enim
-          egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-          Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-          lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-          elementum tellus.
-        </p>
-      </div>
-      <div className="tech-content">
-        <h2>Technologies used</h2>
-        <ul>
-          <li>React</li>
-          <li>Sass</li>
-          <li>Firebase</li>
-          <li>GitHub</li>
-        </ul>
-      </div>
-      <div className="btn-container">
-        <button className="btn-solid">Visit webiste</button>
-        <div className="separation">
-          <div className="line"></div>
-          <p>OR</p>
-          <div className="line"></div>
+  const { id } = useParams();
+  const { data: project, isFetching, isSuccess } = useProjectQuery(id);
+  const [tech, setTech] = useState([]);
+
+  useEffect(() => {
+    if (project && project?.techused) {
+      const techString = project.techused[0];
+      const techNames = techString
+        .replace(/["[\]]/g, "")
+        .split(",")
+        .map((item) => item.trim());
+      setTech(techNames);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [project]);
+
+  return isFetching ? (
+    <p>Loading...</p>
+  ) : (
+    isSuccess && (
+      <motion.main
+        className="blog"
+        variants={variants}
+        initial="out"
+        animate="in"
+        exit="out"
+      >
+        <img src={project.image} alt="test" className="blog-img" />
+        <div className="blog-author">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/69670075724__9BDD47C6-2257-4C34-B8A2-AE6898244CBD.jpeg?alt=media&token=ed59685a-b075-4a52-b9a6-c8f2c07d8c01"
+            alt="user"
+          />
+          <p>Sebastian Morazzani</p>
         </div>
-        <button className="btn-light">See code</button>
-      </div>
-    </motion.main>
+        <div className="blog-content">
+          <h1 className="blog-title">{project.title}</h1>
+          <p className="blog-text">{project.content}</p>
+        </div>
+        <div className="tech-content">
+          <h2>Technologies used</h2>
+          <ul>
+            {tech.map((tech, index) => (
+              <li key={index}>{tech}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="btn-container">
+          <a
+            className="btn-solid"
+            href={project.linkwebsite}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit webiste
+          </a>
+          <div className="separation">
+            <div className="line"></div>
+            <p>OR</p>
+            <div className="line"></div>
+          </div>
+          <a
+            className="btn-light"
+            href={project.linkgithub}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            See code
+          </a>
+        </div>
+      </motion.main>
+    )
   );
 };
 

@@ -47,3 +47,33 @@
         }
     }
 }
+
+@media screen and (max-width: $max-phone) {
+    .footer {
+        height: 317px;
+        padding: 40px 20px;
+        &-talk {
+            h2 {
+                font-size: 18px;
+            }
+            button {
+                padding: 21px 37px;
+                border: none;
+                background: #fff;
+                font-size: 14px;
+            }
+        }
+        &-text {
+            a {
+                font-size: 14px;
+            }
+            p {
+                margin-top: 20px;
+                font-size: 12px;
+            }
+        }
+        &-icons {
+            display: none;
+        }
+    }
+}

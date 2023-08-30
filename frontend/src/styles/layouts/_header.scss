@@ -20,6 +20,103 @@
                     }
                 }
             }
+            .loggout {
+                border: none;
+                background: none;
+                text-transform: uppercase;
+                color: $accent;
+                cursor: pointer;
+            }
         }
+    }
+    .menu-burger {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $max-phone) {
+    .header {
+        height: 60px;
+        padding: 0 20px;
+        .menu-burger {
+            display: flex;
+        }
+        .burger-icon {
+            background: transparent;
+            color: $header;
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
+        .burger-close {
+            z-index: 6;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+        }
+        .burger-menu {
+            // z-index: 1000;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // background: $header;
+            // height: 100vh;
+            // width: 100%;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+            // gap: 1.5rem;
+            // transition: top 1s;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: $header;
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease-in-out;
+            li {
+                margin-bottom: 20px;
+            }
+        }
+        .slide-in {
+            transform: translateY(0%);
+        }
+        .slide-out {
+            transform: translateY(-100%);
+        }
+
+        // .burger-menu.slide-in {
+        //     animation: slide-in 3s forwards;
+        // }
+
+        // .slide-out {
+        //     animation: slide-out 3s forwards;
+        // }
+
+        // @keyframes slide-in {
+        //     to {
+        //         top: 0vh;
+        //     }
+        // }
+        // @keyframes slide-out {
+        //     to {
+        //         top: -100vh;
+        //     }
+        // }
+    }
+    .logo {
+        width: 50px;
+    }
+
+    .nav {
+        display: none;
     }
 }
