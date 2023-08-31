@@ -46,7 +46,7 @@
             color: $header;
             border: none;
             outline: none;
-            font-size: 18px;
+            font-size: 20px;
         }
         .burger-close {
             z-index: 6;
@@ -56,67 +56,53 @@
             font-size: 20px;
         }
         .burger-menu {
-            // z-index: 1000;
-            // position: absolute;
-            // top: 0;
-            // left: 0;
-            // background: $header;
-            // height: 100vh;
-            // width: 100%;
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
-            // justify-content: center;
-            // gap: 1.5rem;
-            // transition: top 1s;
             z-index: 5;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: $header;
+            background: #fff;
             height: 100vh;
             width: 100%;
             text-align: center;
             padding: 2rem;
             position: absolute;
-            top: 0;
+            top: -105vh;
             left: 0;
-            transition: transform 1s ease-in-out;
+            right: 0;
+            min-height: 100vh;
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+            transition: top 1s ease-in-out;
             li {
-                margin-bottom: 20px;
+                margin-bottom: 50px;
+
+                font-size: 20px;
+                a {
+                    color: $header;
+                }
             }
         }
         .slide-in {
-            transform: translateY(0%);
+            top: 0vh;
         }
-        .slide-out {
-            transform: translateY(-100%);
-        }
-
-        // .burger-menu.slide-in {
-        //     animation: slide-in 3s forwards;
-        // }
-
-        // .slide-out {
-        //     animation: slide-out 3s forwards;
-        // }
-
-        // @keyframes slide-in {
-        //     to {
-        //         top: 0vh;
-        //     }
-        // }
-        // @keyframes slide-out {
-        //     to {
-        //         top: -100vh;
-        //     }
-        // }
     }
     .logo {
-        width: 50px;
+        width: 70px;
     }
 
     .nav {
         display: none;
+    }
+}
+
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .header {
+        padding: 0 20px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: $min-labtop) and (max-width: $max-labtop) {
+    .header {
+        padding: 0 20px;
     }
 }

@@ -140,6 +140,67 @@
 
             .btn {
                 &-light {
+                    font-size: 14px;
+                    width: 100%;
+                    text-align: center;
+                }
+                &-solid {
+                    font-size: 14px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .separation {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .blog {
+        padding: 0 20px;
+        margin-top: 40px;
+        &-img {
+            height: 320px;
+        }
+        &-author {
+            margin: 20px 0;
+            gap: 8px;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+            p {
+                font-size: 16px;
+                color: $text;
+            }
+        }
+        &-title {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        &-text {
+            font-size: 16px;
+        }
+        .tech-content {
+            h2 {
+                font-size: 20px;
+            }
+            ul {
+                color: $label;
+                font-size: 16px;
+            }
+        }
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+
+            .btn {
+                &-light {
                     font-size: 18px;
                     width: 100%;
                     text-align: center;
@@ -154,5 +215,12 @@
                 font-size: 18px;
             }
         }
+    }
+}
+
+@media screen and (min-width: $min-labtop) and (max-width: $max-labtop) {
+    .blog {
+        padding: 0 20px;
+        margin-top: 40px;
     }
 }

@@ -33,4 +33,58 @@
     background: $accent;
     border: none;
     padding: 13px 59px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: $max-phone) {
+    .main-header {
+        padding: 0 20px;
+        gap: 40px;
+        .line {
+            height: 3px;
+            width: 100px;
+            background: $accent;
+        }
+        .title {
+            font-size: 50px;
+            color: $header;
+        }
+    }
+    .subtitle {
+        font-size: 70px;
+        color: $text;
+    }
+}
+
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .main-header {
+        padding: 0 20px;
+
+        .line {
+            width: 120px;
+        }
+        .title {
+            font-size: 100px;
+        }
+    }
+    .subtitle {
+        font-size: 90px;
+    }
+}
+
+@media screen and (min-width: $min-labtop) and (max-width: $max-labtop) {
+    .main-header {
+        padding: 0 20px;
+        gap: 14px;
+
+        .line {
+            width: 140px;
+        }
+        .title {
+            font-size: 180px;
+        }
+    }
+    .subtitle {
+        font-size: 90px;
+    }
 }

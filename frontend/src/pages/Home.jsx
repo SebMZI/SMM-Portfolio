@@ -39,7 +39,7 @@ const Home = () => {
 
       <section id="about">
         <div className="about-content">
-          <h2 about="title">Hi, welcome here !</h2>
+          <h2 className="title">Hi, welcome here !</h2>
           <div className="delimitation"></div>
           <p className="text">
             Morazzani Sebastian, 20 years old. A passionate young web developer

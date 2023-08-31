@@ -77,3 +77,41 @@
         }
     }
 }
+
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .footer {
+        height: 317px;
+        padding: 40px 20px;
+        &-talk {
+            h2 {
+                font-size: 24px;
+            }
+            button {
+                padding: 21px 37px;
+                border: none;
+                background: #fff;
+                font-size: 16px;
+            }
+        }
+        &-text {
+            a {
+                font-size: 14px;
+            }
+            p {
+                margin-top: 20px;
+                font-size: 12px;
+            }
+        }
+        &-icons {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: $min-labtop) and (max-width: $max-labtop) {
+    .footer {
+        height: 420px;
+        padding: 40px 20px;
+       
+    }
+}

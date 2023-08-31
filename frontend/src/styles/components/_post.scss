@@ -50,3 +50,23 @@
         }
     }
 }
+
+@media screen and (min-width: $min-tablet) and (max-width: $max-tablet) {
+    .post-container {
+        .post {
+            &-img {
+                width: 100%;
+                height: 320px;
+            }
+
+            &-content {
+                .title {
+                    font-size: 22px;
+                }
+                .text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
