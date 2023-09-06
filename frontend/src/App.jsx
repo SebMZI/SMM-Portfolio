@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
-import Login from "./features/auth/Login";
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import RequiredAuthentification from "./features/auth/RequiredAuthentification";

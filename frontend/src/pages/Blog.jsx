@@ -10,6 +10,10 @@ const Blog = () => {
   const [tech, setTech] = useState([]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
+  useEffect(() => {
     if (project && project?.techused) {
       const techString = project.techused[0];
       const techNames = techString
@@ -22,7 +26,9 @@ const Blog = () => {
   }, [project]);
 
   return isFetching ? (
-    <p>Loading...</p>
+    <div className="loader-container">
+      <div className="blog-loading"></div>
+    </div>
   ) : (
     isSuccess && (
       <motion.main
@@ -35,8 +41,8 @@ const Blog = () => {
         <img src={project.image} alt="test" className="blog-img" />
         <div className="blog-author">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/69670075724__9BDD47C6-2257-4C34-B8A2-AE6898244CBD.jpeg?alt=media&token=ed59685a-b075-4a52-b9a6-c8f2c07d8c01"
-            alt="user"
+            src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/sebastian-morazzani.webp?alt=media&token=33f68ac5-0ef0-4443-b96d-337789c25642"
+            alt="author Sebastian Morazzani"
           />
           <p>Sebastian Morazzani</p>
         </div>

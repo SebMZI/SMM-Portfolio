@@ -18,7 +18,26 @@
             font-size: 18px;
             font-weight: 700;
             color: $header;
+            background: #fff;
+            position: relative;
+            transition: color 0.4s ease-in-out;
             cursor: pointer;
+            &::before {
+                content: "";
+                position: absolute;
+                background: $header;
+                opacity: 0.2;
+                top: 0%;
+                left: 0%;
+                width: 0%;
+                height: 100%;
+                color: #fff;
+                transition: width 0.4s ease-in-out;
+            }
+
+            &:hover::before {
+                width: 110%;
+            }
         }
     }
     &-content {
@@ -42,8 +61,11 @@
         align-items: flex-end;
         gap: 15px;
         cursor: pointer;
-        .icon {
-            font-size: 20px;
+        a {
+            .icon {
+                color: #fff;
+                font-size: 20px;
+            }
         }
     }
 }
@@ -112,6 +134,5 @@
     .footer {
         height: 420px;
         padding: 40px 20px;
-       
     }
 }

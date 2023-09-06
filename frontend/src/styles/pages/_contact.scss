@@ -36,9 +36,42 @@
         align-items: center;
         .btn {
             margin: 0;
-            padding: 35px 122px;
-            background: $accent;
-            color: #fff;
+            padding: 25px 118px;
+            background: none;
+            border: 1px solid $header;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: border 0.4s ease-in-out;
+            button {
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: $label;
+                transition: color 0.4s ease-in-out;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0%;
+                left: 0%;
+
+                height: 100%;
+                width: 0%;
+                z-index: -1;
+                background: $accent;
+                transition: width 0.4s ease-in-out;
+            }
+            &:hover {
+                border: 1px solid transparent;
+                button {
+                    color: #fff;
+                }
+            }
+            &:hover::before {
+                width: 110%;
+            }
         }
         .line-container {
             display: flex;
@@ -98,11 +131,40 @@
                 font-size: 12px;
             }
             .submit-btn {
+                position: relative;
                 border: none;
                 padding: 16px 87px;
                 background: $accent;
                 color: #fff;
                 cursor: pointer;
+
+                &::after {
+                    content: "";
+                    background: #fff;
+                    opacity: 0.2;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    transition: width 0.4s ease-in-out;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+            .loading {
+                margin: auto;
+                border-radius: 50%;
+                border: 2px dotted #fff;
+                width: 20px;
+                height: 20px;
+                animation: rotating 2s infinite linear;
+            }
+            @keyframes rotating {
+                to {
+                    transform: rotate(360deg);
+                }
             }
         }
     }
@@ -115,6 +177,7 @@
         gap: 66px;
         .header {
             padding: 0;
+
             .contact-title {
                 gap: 10px;
                 h1 {
@@ -145,6 +208,10 @@
                 align-items: center;
                 border: 1px solid $header;
                 color: $header;
+
+                a {
+                    font-size: 14px;
+                }
             }
             .contact-form {
                 display: block;
@@ -168,8 +235,9 @@
                 }
 
                 .submit-btn {
-                    height: 54px;
+                    height: 56px;
                     width: 100%;
+                    font-size: 14px;
                 }
             }
         }

@@ -61,13 +61,13 @@ const Home = () => {
           </p>
         </div>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/69670075724__9BDD47C6-2257-4C34-B8A2-AE6898244CBD.jpeg?alt=media&token=ed59685a-b075-4a52-b9a6-c8f2c07d8c01"
+          src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/sebastian-morazzani.webp?alt=media&token=33f68ac5-0ef0-4443-b96d-337789c25642"
           alt="Morazzani Sebastian"
           className="about-pic"
         />
       </section>
 
-      <section id="realizations">
+      <motion.section id="realizations">
         <div className="realizations-header">
           <h2 className="title">REALIZATIONS</h2>
           <div className="line"></div>
@@ -89,7 +89,7 @@ const Home = () => {
             />
           ))
         )}
-      </section>
+      </motion.section>
     </motion.main>
   );
 };

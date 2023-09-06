@@ -60,8 +60,8 @@ const Contact = () => {
       </div>
       <section className="contact-form-container">
         {sendModal ? <SendConfirmedModal setSendModal={setSendModal} /> : null}
-        <a href="mailto:mrgy.sebastien@gmail.com" className="btn">
-          Contact by mail
+        <a className="btn" href="mailto:mrgy.sebastien@gmail.com">
+          <button>Contact by mail</button>
         </a>
         <div className="line-container">
           <div className="light-line"></div>
@@ -75,14 +75,14 @@ const Contact = () => {
               type="text"
               id="name"
               autoFocus
-              autoComplete="off"
+              autocomplete="address-level4"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="input-container">
             <label htmlFor="email">Email</label>
             <input
-              autoComplete="off"
+              autocomplete="address-level4"
               type="email"
               id="email"
               onChange={(e) => setEmailValue(e.target.value)}
@@ -91,7 +91,7 @@ const Contact = () => {
           <div className="input-container">
             <label htmlFor="object">Object</label>
             <input
-              autoComplete="off"
+              autocomplete="address-level4"
               type="text"
               id="object"
               onChange={(e) => setObject(e.target.value)}
@@ -100,7 +100,7 @@ const Contact = () => {
           <div className="input-container">
             <label htmlFor="message">Message</label>
             <textarea
-              autoComplete="off"
+              autocomplete="address-level4"
               name="message"
               id="message"
               onChange={(e) => setMessage(e.target.value)}
@@ -108,7 +108,7 @@ const Contact = () => {
           </div>
           <div className="submit-error">{err}</div>
           <button type="submit" className="submit-btn">
-            {!pending ? "Send" : "Sending..."}
+            {!pending ? "Send" : <div className="loading"></div>}
           </button>
         </form>
       </section>

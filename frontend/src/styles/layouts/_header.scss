@@ -14,9 +14,22 @@
                 a {
                     font-size: 14px;
                     text-transform: uppercase;
-                    &:hover {
-                        padding-bottom: 5px;
-                        border-bottom: 2px solid $accent;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: -10px;
+                        border: 0px solid $accent;
+                        width: 0%;
+                        transition:
+                            width 0.3s ease-in-out,
+                            border 0.3s ease-in-out;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                        border: 1px solid $accent;
                     }
                 }
             }
