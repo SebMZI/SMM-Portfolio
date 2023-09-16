@@ -59,19 +59,23 @@ const Blog = () => {
           </ul>
         </div>
         <div className="btn-container">
-          <a
-            className="btn-solid"
-            href={project.linkwebsite}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit webiste
-          </a>
-          <div className="separation">
-            <div className="line"></div>
-            <p>OR</p>
-            <div className="line"></div>
-          </div>
+          {project.linkwebsite ? (
+            <>
+              <a
+                className="btn-solid"
+                href={project.linkwebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit webiste
+              </a>
+              <div className="separation">
+                <div className="line"></div>
+                <p>OR</p>
+                <div className="line"></div>
+              </div>
+            </>
+          ) : null}
           <a
             className="btn-light"
             href={project.linkgithub}

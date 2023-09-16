@@ -10,12 +10,14 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import RequiredAuthentification from "./features/auth/RequiredAuthentification";
+import Awwwards from "./components/Awwwards";
 
 function App() {
   const location = useLocation();
   return (
     <>
       <Header />
+      <Awwwards />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout />}>

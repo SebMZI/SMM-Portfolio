@@ -5,7 +5,7 @@ const Post = ({ props }) => {
   return (
     <Link to={`/blog/${props.id}`} className="post-container">
       <article className="post">
-        <img src={props.image} alt="posttest" className="post-img" />
+        <img src={props.image} alt={props.title} className="post-img" />
         <div className="post-content">
           <div className="title">
             <h3>{props.title}</h3>

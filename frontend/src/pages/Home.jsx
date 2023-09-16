@@ -74,7 +74,9 @@ const Home = () => {
         </div>
 
         {isLoading ? (
-          <p>Loading projects...</p>
+          <div className="loader-container">
+            <div className="blog-loading"></div>
+          </div>
         ) : (
           isSuccess &&
           projects.map((project) => (

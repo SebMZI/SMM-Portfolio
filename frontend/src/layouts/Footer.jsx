@@ -34,7 +34,6 @@ const Footer = () => {
           <a href="https://github.com/SebMZI" target="_blank" rel="noreferrer">
             <i className="fa-brands fa-square-github icon"></i>
           </a>
-          <Link to="/login">Login</Link>
         </div>
       </div>
     </motion.footer>
