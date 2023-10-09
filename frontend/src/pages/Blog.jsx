@@ -25,6 +25,11 @@ const Blog = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project]);
 
+//  const contentWithBreaks = project?.content?.replace(/\n/g, '<br />');
+  const contentArray = project?.content?.split("%")
+  console.log(contentArray);
+
+
   return isFetching ? (
     <div className="loader-container">
       <div className="blog-loading"></div>
@@ -48,7 +53,12 @@ const Blog = () => {
         </div>
         <div className="blog-content">
           <h1 className="blog-title">{project.title}</h1>
-          <p className="blog-text">{project.content}</p>
+          {contentArray.map(text => (
+            <>
+            <p className="blog-text">{text}</p><br/>
+            </>
+))}
+
         </div>
         <div className="tech-content">
           <h2>Technologies used</h2>

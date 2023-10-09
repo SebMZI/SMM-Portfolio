@@ -61,7 +61,7 @@ const Home = () => {
           </p>
         </div>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/sebastian-morazzani.webp?alt=media&token=33f68ac5-0ef0-4443-b96d-337789c25642"
+          src="https://firebasestorage.googleapis.com/v0/b/smm-portfolio.appspot.com/o/sebastien.webp?alt=media&token=cfacf690-36b2-46ed-8e0a-e7527375d556&_gl=1*1nqdups*_ga*MTUwNDkxNTk2Ni4xNjk2NzgxMTQy*_ga_CW55HF8NVT*MTY5Njc4MTE0Mi4xLjEuMTY5Njc4MTIwMy42MC4wLjA."
           alt="Morazzani Sebastian"
           className="about-pic"
         />
